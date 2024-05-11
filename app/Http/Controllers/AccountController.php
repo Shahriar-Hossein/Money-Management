@@ -32,9 +32,9 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'AccountName' => 'required',
-            'AccountType' => 'required',
-            'Balance' => 'required|numeric',
+            'account_name' => 'required',
+            'account_type' => 'required',
+            'balance' => 'required|numeric',
         ]);
         $user = Auth::user();
         $user->accounts()->create($request->all());
@@ -65,9 +65,9 @@ class AccountController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'AccountName' => 'required',
-            'AccountType' => 'required',
-            'Balance' => 'required|numeric',
+            'AccountName' => 'sometimes',
+            'AccountType' => 'sometimes',
+            'Balance' => 'sometimes|numeric',
         ]);
 
         $account = Account::find($id);

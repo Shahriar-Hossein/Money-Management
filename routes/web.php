@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('accounts', AccountController::class)
-    ->only(['index', 'store', 'edit', 'update','destroy'])
+    ->only(['index', 'store', 'create', 'edit', 'update','destroy'])
     ->middleware('auth');
 
 
