@@ -23,7 +23,7 @@ Route::resource('accounts', AccountController::class)
     ->only(['index', 'store', 'create', 'edit', 'update','destroy'])
     ->middleware('auth');
 
-    Route::resource('bills', BillController::class)
+Route::resource('bills', BillController::class)
     ->only(['index', 'store', 'create', 'edit', 'update','destroy'])
     ->middleware('auth');
 
